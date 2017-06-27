@@ -452,8 +452,10 @@ class Params:
 
 
 if __name__ == '__main__':
-    gt_file = '/mnt/storage/mio_tcd_loc/MIO-TCD-Localization/gt_test.csv'
-    res_file = '/mnt/storage/mio_tcd_loc/MIO-TCD-Localization/78_YOLO_V2_MIOTCD.csv'
+    import sys
+    assert len(sys.argv) > 2, "python cocoeval.py gt_test.csv your_test.csv"
+    gt_file = sys.argv[1]
+    res_file = sys.argv[2]
     import csv
 
     motorized_vehicle_classes = ['articulated_truck', 'bus', 'car',
